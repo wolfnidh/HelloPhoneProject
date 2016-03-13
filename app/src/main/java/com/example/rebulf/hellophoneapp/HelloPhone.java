@@ -1,5 +1,6 @@
 package com.example.rebulf.hellophoneapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class HelloPhone extends AppCompatActivity {
+
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
+    private EditText MsgText;
+    private TextView ShowMsg;
+    private Button ShowBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +29,24 @@ public class HelloPhone extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        MsgText = (EditText) findViewById(R.id.MsgText);
+        ShowMsg = (TextView) findViewById(R.id.ShowTextField);
+        ShowBtn = (Button) findViewById(R.id.ok_button);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        ShowBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = MsgText.getText().toString();
+                ShowMsg.setText(s);
             }
         });
     }
@@ -48,5 +71,15 @@ public class HelloPhone extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void ShowText(View view) {
+        String s = "a";
+        //Intent intent = new Intent(this, DisplayMessageActivity.class);
+        //setContentView(R.layout.activity_hello_phone);
+        //EditText editText = (EditText) findViewById(R.id.ShowTextField);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        //startActivity(intent);
     }
 }

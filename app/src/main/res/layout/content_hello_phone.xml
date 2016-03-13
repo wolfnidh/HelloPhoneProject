@@ -15,5 +15,50 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Phone!" />
+        android:text="Hello Phone!"
+        android:layout_marginTop="60dp"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Write some thing below:"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MsgText"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/ok_button"
+        android:layout_toStartOf="@+id/ok_button"
+        android:hint="Write here..." />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/ok_button"
+        android:layout_alignBottom="@+id/MsgText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show text here."
+        android:id="@+id/ShowTextField"
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/MsgText"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
